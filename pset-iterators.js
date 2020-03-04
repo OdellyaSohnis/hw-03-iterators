@@ -43,6 +43,12 @@ console.log('Problem 1:')
 
 // Add your code below this line
 
+const firstWhigPresident = presidents.find((current) => {
+  return current.party === "Whig"
+})
+
+console.log(firstWhigPresident.president);
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -65,6 +71,18 @@ Expected Result Shape: An array of objects (with each object representing a pres
 console.log('Problem 2:')
 
 // Add your code below this line
+
+const presidentsNamedJames = presidents.filter((firstNameJames)=>{
+  return firstNameJames.president.split(" ")[0] === "James"
+})
+
+// console.log(presidentsNamedJames);
+
+const onlyFirstJames = presidentsNamedJames.map((firstName)=>{
+  return firstName.president
+})
+
+console.log(onlyFirstJames);
 
 // Add your code above this line
 
@@ -93,6 +111,12 @@ console.log('Problem 3:')
 
 // Add your code below this line
 
+const presidentialParties = presidents.map((partiesList)=>{
+  return partiesList.party
+})
+
+console.log(presidentialParties);
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -114,6 +138,17 @@ Expected Result Shape: An array of objects (with each object representing a pres
 console.log('Problem 4:')
 
 // Add your code below this line
+
+const presidentsBetween1850and1900 = presidents.filter((president)=>{
+  const presidentYear = parseInt(president.took_office.split("-")[0])
+  return presidentYear >= 1850 && presidentYear <= 1900
+})
+
+const presidentNamesBetween = presidentsBetween1850and1900.map((presidentNames)=>{
+  return presidentNames.president
+})
+
+console.log(presidentNamesBetween);
 
 // Add your code above this line
 
@@ -138,6 +173,16 @@ console.log('Problem 5:')
 
 // Add your code below this line
 
+const livingPresidents = presidents.filter((alive)=>{
+  return alive.death_year === null
+})
+
+const firstNameLivingPresidents = livingPresidents.map((chris)=>{
+  return chris.president
+})
+
+console.log(firstNameLivingPresidents);
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -161,6 +206,12 @@ console.log('Problem 6:')
 
 // Add your code below this line
 
+const firstRepublican = presidents.find((freedomFighter)=>{
+  return freedomFighter.president;
+})
+
+console.log(firstRepublican.president);
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -183,6 +234,16 @@ Expected Result Shape: An array of objects (with each object representing a pres
 console.log('Problem 7:')
 
 // Add your code below this line
+
+const shortTermPresidents = presidents.filter((gaveUp)=>{
+  if (gaveUp.left_office !== null){
+    const started = parseInt(gaveUp.took_office.split("-")[0])
+    const ended = parseInt(gaveUp.left_office.split("-")[0])
+    return ended - started <= 3
+  }
+})
+
+console.log(shortTermPresidents);
 
 // Add your code above this line
 
@@ -211,7 +272,21 @@ console.log('Problem 8:')
 
 // Add your code below this line
 
+const stepOne = presidents.map((firstName)=>{
+  return firstName.president.split(" ")[0]
+})
 
+
+
+console.log(stepOne);
+
+// const firstNameCount = stepOne.reduce((nameToAmount)=>{
+//
+//     return nameToAmount.
+// })
+
+
+//console.log(firstNameCount);
 
 // Add your code above this line
 
